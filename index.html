@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="support.css">
+</head>
+<body>
+    <div class="formbg">
+        <h1>Sistema de soporte</h1>   
+            <form>
+                <label for="name">Causa que lo originó</label>
+                <input type="text" id="name" readonly><br><br>
+
+                <label for="reason">Motivo del soporte</label>
+                <input type="text" id="reason" readonly><br><br>
+                
+                <label for="about">Comentarios adicionales</label>
+                <textarea id="about" readonly></textarea><br><br>
+                
+                <button id="startButton">Grabar</button>
+                <button id="stopButton" disabled>Detener</button>    
+            </form>
+    </div>    
+    <script src="Support.js"></script>  
+</body>
+</html>

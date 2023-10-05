@@ -1,0 +1,82 @@
+html{
+    background-color: rgb(0, 0, 0);
+}
+
+#startButton{
+    background-color: #0c99c0;
+}
+
+#stopButton{
+    background-color: #ce2323;
+}
+
+#startButton, #stopButton{
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.8);
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin: 5px;
+    font-size: 16px;
+    width: 150px;
+}
+
+label{
+    color: white;
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+#name,#reason, #about{
+    color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.486);
+    border-color:rgb(36, 36, 236);
+    font-size: 16px;
+    align-content: center;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    border-radius: 4px;
+    cursor: not-allowed;
+    width: 90%; 
+    height: 30px;
+}
+
+#about, #reason{
+    height: 90px;
+}
+
+.formbg{
+    background-color: rgb(54, 54, 185);
+    /* margin: 0px 200px 0px 200px; */
+    /* padding-top: 100px; */
+    color: white;
+    text-align: center;
+    width: 100%; /*responsive*/
+    max-width: 420px; 
+    /* font-family: sans-serif; */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /*responsive*/
+}
+
+#startButton:disabled { /* Cambia el estilo del cursor a "no permitido" cuando está deshabilitado */
+    cursor: not-allowed; 
+    color: #ffffff;
+    opacity: 0.4;
+}
+
+#stopButton:disabled{
+    cursor: not-allowed;
+    color: #ffffff;
+    opacity: 0.4;
+}
+
+#startButton:active {
+    background-color: #27adda; /* Cambia el color de fondo cuando se hace clic en el botón de inicio */
+}
+
+#stopButton:active {
+    background-color: #e03131; /* Cambia el color de fondo cuando se hace clic en el botón de detener */
+}
