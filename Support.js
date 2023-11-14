@@ -1,8 +1,15 @@
 const recognition = new webkitSpeechRecognition();
-const names = ["Soporte", "Almacen"];
+const names = ["Soporte", "Almacen", "Smt", "General"]; //agregadas Smt y General
 const causas = ["falta de mantenimiento", "mantenimiento preventivo", "falla de equipo"];
 let currentQuestion = 0;
 let accumulatedResult = '';
+
+//se ha agregado una constante grammar para almacenar las palabras que es preferible utilizar en el modulo de voz.
+const grammar = `#JSGF V1.0; grammar namesAndCausas; public <name> = ${names.join(' | ')} ; public <causa> = ${causas.join(' | ')} ;`;
+
+const speechRecognitionList = new webkitSpeechGrammarList(); //webkitSpeechGrammarList();
+speechRecognitionList.addFromString(grammar, 1);
+recognition.grammars = speechRecognitionList;
 
 function resetForm() {
     document.getElementById('name').value = '';
@@ -12,6 +19,7 @@ function resetForm() {
     accumulatedResult = '';
 }
 
+//configuraciones del reconocimiento de voz
 recognition.continuous = true;
 recognition.lang = 'es-ES';
 recognition.interimResult = false;
@@ -74,17 +82,3 @@ document.getElementById('stopButton').addEventListener('click', () => {
 const nameInput = document.getElementById('name');
 const reasonInput = document.getElementById('re]son');
 const aboutTextarea = document.getElementById('about');
-
-
-// Mensajes de advertencia al dar clic en formulario
-// nameInput.addEventListener('click', () => {
-//     alert('No se acepta texto por teclado');
-// });
-
-// reasonInput.addEventListener('click', () => {
-//     alert('No se acepta texto por teclado');
-// });
-
-// aboutTextarea.addEventListener('click', () => {
-//     alert('No se acepta texto por teclado');
-// });
