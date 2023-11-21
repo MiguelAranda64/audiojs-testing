@@ -80,5 +80,5 @@ document.getElementById('stopButton').addEventListener('click', () => {
 
 // Obtén una referencia a los elementos input y textarea
 const nameInput = document.getElementById('name');
-const reasonInput = document.getElementById('re]son');
+const reasonInput = document.getElementById('reason');
 const aboutTextarea = document.getElementById('about');
